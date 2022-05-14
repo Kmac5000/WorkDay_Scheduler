@@ -35,7 +35,15 @@ var currentHour = moment().format("LT");
 
 currentDay.text(currentDate);
 
- //grabs hour from each time slot and compares it to actual time
+// init();
+
+// function init() {
+//     localStorage.getItem('text9am').val();
+
+// };
+
+
+//grabs hour from each time slot and compares it to actual time
         function timeColor() {
     
     if (currentHour === hourCol) {
@@ -53,7 +61,7 @@ currentDay.text(currentDate);
       }
   };
 
-timeColor()
+timeColor();
 
 
 // save buttons
@@ -98,10 +106,12 @@ save12pm.on("click", function () {
 });
 
 
-
-
-function getValue() {
-    localStorage.getItem('createItem');
-}
-getValue();
-console.log(getValue)
+text9am.text(localStorage.getItem('text9am'));
+text10am.text(localStorage.getItem('text10am'));
+text11am.text(localStorage.getItem('text11am'));
+text12pm.text(localStorage.getItem('text12pm'));
+text1pm.text(localStorage.getItem('text1pm'));
+text2pm.text(localStorage.getItem('text2pm'));
+text3pm.text(localStorage.getItem('text3pm'));
+text4pm.text(localStorage.getItem('text4pm'));
+text5pm.text(localStorage.getItem('text5pm'));
