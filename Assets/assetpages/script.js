@@ -29,43 +29,44 @@ var text3pm = $("#text3pm");
 var text4pm = $("#text4pm");
 var text5pm = $("#text5pm");
 
+// time var
+var hourll = $("#hour11");
 // date and time
 var currentDate = moment().format("dddd, MMMM Do, YYYY");
 var currentHour = moment().format("LT");
-
+var hour = $("#hour");
 currentDay.text(currentDate);
 
-// init();
-
-// function init() {
-//     localStorage.getItem('text9am').val();
-
-// };
-
-
+var row9 = $("#row9");
+var hourll = $("#hour11");
 //grabs hour from each time slot and compares it to actual time
-        function timeColor() {
-    
-    if (currentHour === hourCol) {
-      row.addClass("present");
-     }
-     
-     if (currentHour < hourCol) {
-      row.removeClass("present");
-      row.addClass("future");
-     }
+function timeTracker() {
+        
+        var timeNow = currentHour;
 
-     if (currentHour > hourCol) {
-      row.removeClass("future");
-      row.addClass("past");
-      }
-  };
+        // loop over time blocks
+        row.each(function () {
+            
+            if (hourCol > timeNow) {
+                row.removeClass("future");
+                row.removeClass("present");
+                row.addClass("past");
+            }
+            else if (hourCol === timeNow) {
+                row.removeClass("past");
+                row.removeClass("future");
+                row.addClass("present");
+            }
+            else {
+                row.removeClass("present");
+                row.removeClass("past");
+                row.addClass("future");
 
-timeColor();
-
-
+            }
+        })
+}
 // save buttons
-
+timeTracker();
 
 
 save9am.on("click", function () {
