@@ -1,0 +1,12 @@
+1. display current date at the top of the page
+		use moment to get date
+2. build time blocks for calender
+		A. standered business hours - 9 -5
+		b. color code time blocks
+			past, present, future
+3. click into time block
+		lets me enter event
+4.click save button 
+		saves time block input
+5.refresh page
+	events remain, stored in local memory
