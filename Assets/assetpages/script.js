@@ -1,7 +1,7 @@
-
+ 
 
 // elements
-var centerCol = $("#centerCol")
+var centerCol = $(".centerCol")
 var currentDay = $("#currentDay") 
 
 
@@ -12,3 +12,4 @@ var currentTime = moment().format("dddd, MMMM Do, YYYY");
 
 
 currentDay.text(currentTime);
+

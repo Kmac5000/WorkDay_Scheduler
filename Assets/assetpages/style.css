@@ -58,14 +58,14 @@ textarea {
   transition: all 0.3s ease-in-out;
 }
 
-#hourCol {
+.hourCol {
   border: var(--colBorder);
 }
 
-#centerCol {
+.centerCol {
   border: var(--colBorder);
 }
 
-#saveCol {
+.saveCol {
   border: var(--colBorder);
 }
