@@ -21,7 +21,7 @@ textarea {
   border-bottom: 10px solid black;
 }
 
-.centerCol {
+.description {
   white-space: pre-wrap;
 }
 
@@ -77,8 +77,8 @@ textarea {
 
 .centerCol {
   border: var(--colBorder);
-}
+} */
 
 .saveCol {
-  border: var(--colBorder);
-} */
+  border-left: 1px solid #000000;
+}
