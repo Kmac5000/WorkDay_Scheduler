@@ -5,7 +5,7 @@ var centerCol = $(".centerCol");
 var currentDay = $("#currentDay");
 var hourCol = $(".hourCol");
 var saveCol = $(".saveCol");
-var row =$(".row")
+var row = $(".row")
 // buttons
 var saveBtn = $("#saveBtn");
 var save9am = $("#save9am");
@@ -33,37 +33,43 @@ var text5pm = $("#text5pm");
 var hourll = $("#hour11");
 // date and time
 var currentDate = moment().format("dddd, MMMM Do, YYYY");
-var currentHour = moment().format("LT");
-var hour = $("#hour");
+var timeNow = moment().format("H");
+var hour = $(".hour");
 currentDay.text(currentDate);
 
 var row9 = $("#row9");
 var hourll = $("#hour11");
 //grabs hour from each time slot and compares it to actual time
 function timeTracker() {
+       
         
-        var timeNow = currentHour;
 
         // loop over time blocks
-        row.each(function () {
-            
-            if (hourCol > timeNow) {
-                row.removeClass("future");
-                row.removeClass("present");
-                row.addClass("past");
+    for (const hourBlock of row) {
+        var thisHour = hourBlock.dataset.hour;
+        // var thisHour = row[i].getAttribute("data-hour");
+        console.log(thisHour);
+        console.log(timeNow);
+        if (thisHour < timeNow) {
+                // hourBlock.classList.remove("future");
+                // hourBlock.classList.remove("present");
+                hourBlock.classList.add("past");
             }
-            else if (hourCol === timeNow) {
-                row.removeClass("past");
-                row.removeClass("future");
-                row.addClass("present");
+            else if (thisHour === timeNow) {
+                // hourBlock.classList.remove("past");
+                // hourBlock.classList.remove("future");
+                hourBlock.classList.add("present");
             }
             else {
-                row.removeClass("present");
-                row.removeClass("past");
-                row.addClass("future");
+                // hourBlock.classList.remove("present");
+                // hourBlock.classList.remove("past");
+                hourBlock.classList.add("future");
 
             }
-        })
+    }
+            
+           
+        
 }
 // save buttons
 timeTracker();
